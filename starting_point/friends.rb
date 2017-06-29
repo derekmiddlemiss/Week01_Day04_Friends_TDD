@@ -19,3 +19,9 @@ def remove_friend(person, name)
   person[:friends].delete(name)
   return person[:friends]
 end
+
+def total_money(people)
+  total = 0
+  people.each{|person| total += person[:monies]}
+  return total
+end
