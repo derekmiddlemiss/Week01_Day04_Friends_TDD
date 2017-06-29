@@ -101,8 +101,8 @@ class TestFriends < MiniTest::Test
 
   # 6. For two given people, allow the first person to loan a given value of money to the other
   def test_extend_loan()
-    result = extend_loan(@person1,@person5,50)
-    assert_equal("Transfer of 50 from Dave (new balance 50) to Rick (new balance 51)",result)
+    extend_loan(@person5,@person1,50)
+    assert_equal(-1, @person5[:monies]-@person1[:monies])
   end
 
 

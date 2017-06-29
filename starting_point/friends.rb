@@ -25,3 +25,8 @@ def total_money(people)
   people.each{|person| total += person[:monies]}
   return total
 end
+
+def extend_loan(from_person,to_person,amount)
+   from_person[:monies] -= amount
+   to_person[:monies] += amount
+end
