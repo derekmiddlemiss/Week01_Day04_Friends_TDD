@@ -71,12 +71,15 @@ class TestFriends < MiniTest::Test
 
   # 1. For a given person, return their favourite tv show
   def test_get_tv_show()
-  result = get_tv_show(@person4)
-  assert_equal("Pokemon", result)
+    result = get_tv_show(@person4)
+    assert_equal("Pokemon", result)
   end
 
   # 2. For a given person, check if they like a particular food
-
+  def test_like_food?()
+    result = like_food?(@person1,"charcuterie")
+    assert_equal(true, result)
+  end
 
   # 3. Allow a new friend to be added to a given person
 
