@@ -100,6 +100,10 @@ class TestFriends < MiniTest::Test
   end
 
   # 6. For two given people, allow the first person to loan a given value of money to the other
+  def test_extend_loan()
+    result = extend_loan(@person1,@person5,50)
+    assert_equal("Transfer of 50 from Dave (new balance 50) to Rick (new balance 51)",result)
+  end
 
 
   # 7. Find the set of everyone's favourite food joined together
