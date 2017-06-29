@@ -14,3 +14,8 @@ def add_friend(person, name)
   person[:friends].push(name)
   return person[:friends]
 end
+
+def remove_friend(person, name)
+  person[:friends].delete(name)
+  return person[:friends]
+end
