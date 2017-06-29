@@ -82,7 +82,10 @@ class TestFriends < MiniTest::Test
   end
 
   # 3. Allow a new friend to be added to a given person
-
+  def test_add_friend()
+    result = add_friend(@person5, "Colin")
+    assert_equal(["Colin"], result)
+  end
 
   # 4. Allow a friend to be removed from a given person
 
