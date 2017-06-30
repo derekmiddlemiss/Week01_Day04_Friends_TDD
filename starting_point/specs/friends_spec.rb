@@ -83,14 +83,14 @@ class TestFriends < MiniTest::Test
 
   # 3. Allow a new friend to be added to a given person
   def test_add_friend()
-    result = add_friend(@person5, "Colin")
-    assert_equal(["Colin"], result)
+    add_friend(@person5, "Colin")
+    assert_equal(["Colin"], @person5[:friends])
   end
 
   # 4. Allow a friend to be removed from a given person
   def test_remove_friend()
     result = remove_friend(@person4, "Jay")
-    assert_equal(["Rick", "Dave"], result)
+    assert_equal(["Rick", "Dave"], @person4[:friends])
   end  
 
   # 5. Find the total of everyone's money
@@ -107,7 +107,11 @@ class TestFriends < MiniTest::Test
 
 
   # 7. Find the set of everyone's favourite food joined together
-
+  def test_favourite_food_all()
+    result = favourite_food_all(@people)
+    food_set = ["charcuterie"] + ["soup","bread"] + ["ratatouille", "stew"] + ["spaghetti"] + ["spinach"]
+    assert_equal(food_set,result)
+  end
 
   # 8. Find people with no friends
 
