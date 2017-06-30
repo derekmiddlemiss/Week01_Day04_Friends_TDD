@@ -114,7 +114,10 @@ class TestFriends < MiniTest::Test
   end
 
   # 8. Find people with no friends
-
+  def test_nae_mates()
+    result = nae_mates(@people)
+    assert_equal(["Dave"],result)
+  end
 
   # VERY tough
   # Find the people who have the same favourite tv show
